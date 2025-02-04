@@ -1,1 +1,1 @@
-# DeepConnect
+The DeepConnect: Liver Cirrhosis Prediction System is designed to leverage machine learning algorithms to predict liver cirrhosis based on key medical parameters. This system aims to assist healthcare professionals by providing a reliable, efficient, and accessible predictive tool. The DeepConnect system is a web-based platform that integrates machine learning techniques to predict liver cirrhosis. By analyzing patient data such as liver enzyme levels, bilirubin, albumin, SGOT, and other biomarkers, the model can assess the likelihood of cirrhosis development. 
