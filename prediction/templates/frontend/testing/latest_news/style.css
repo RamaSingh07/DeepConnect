@@ -1,0 +1,673 @@
+/* {% static 'style.css' %} */
+
+body {
+    margin: 0;
+    /* font-family: 'Roboto', sans-serif;  */
+    font-family: 'Times New Roman', Times, serif;
+  
+    /* background-color: #fdf0d5; */
+  }
+  
+  header {
+    background-color: #003049;
+    color: #fdf0d5;
+    padding: 10px 20px;
+    height:90px;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    
+  }
+  
+  .logo-section {
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+  }
+  
+  .logo {
+    height:90px;
+    width:90px;
+    border-radius:50%;
+    margin-right: 10px;
+  }
+  
+  .tagline {
+    font-size: 18px;
+    font-weight: bold;
+    color: #669bbc;
+
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .accessibility i {
+    font-size: 24px;
+    color: #669bbc;
+  }
+  
+  .contact-info {
+    font-size: 14px;
+  }
+  
+  .language-dropdown select {
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: #669bbc;
+    color: #fdf0d5;
+  }
+  
+  .donate-btn {
+    background-color: #c1121f;
+    color: #fdf0d5;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .donate-btn:hover {
+    background-color: #780000;
+  }
+  /* Main Container */
+.signup-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fdf0d5;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .signup-container h1 {
+    color: #003049;
+    text-align: center;
+    font-size: 28px;
+  }
+  
+  .signup-container p {
+    color: #669bbc;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Form Styles */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #003049;
+  }
+  
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #669bbc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #003049;
+    background-color: #fdf0d5;
+  }
+  
+  textarea {
+    resize: none;
+  }
+  
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #003049;
+  }
+  
+  .signup-btn {
+    background-color: #c1121f;
+    color: #fdf0d5;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .signup-btn:hover {
+    background-color: #780000;
+  }
+  /* Section 2: Navigation Bar */
+ .navbar {
+    display: flex;
+    justify-content:  space-evenly;
+    align-items: center;
+    background-color: #0077b6; /* Deep Blue */
+    padding: 10px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: #ffffff; /* White text */
+    margin: 0 15px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar a:hover {
+    color: #90e0ef; /* Light blue on hover */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .header-left {
+      margin-bottom: 15px;
+    }
+  
+    .navbar {
+      flex-direction: column;
+    }
+  
+    .navbar a {
+      margin: 10px 0;
+    }
+  }
+  
+
+  
+  /* Hero Section */
+.hero {
+    /* height: 100vh; */
+    background: linear-gradient(135deg, #03045e, #00b4d8);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    color: #caf0f8;
+    position: relative; /* If not set, add this */
+    z-index: 1; /* Ensure it's lower than the dropdown menu */
+  }
+  
+  .hero-content {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+  }
+
+ 
+  
+  
+  .text-container {
+    max-width: 50%;
+    overflow: visible;
+  }
+  
+  .text-container h2 {
+    font-size: 3rem;
+    font-family: 'Sen', sans-serif;
+    margin-bottom: 20px;
+  }
+  
+  .text-container p {
+    font-size: 1.25rem;
+    line-height: 2;
+    margin-bottom: 30px;
+    
+  }
+  
+  
+  .cta-button {
+    background-color: #0077b6;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  .cta-button:hover {
+    background-color: #00b4d8;
+  }
+  
+  .animation-container {
+    position: relative;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .animation-container #particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .liver-icon {
+    width: 180px;
+    animation: float 2s infinite ease-in-out;
+  }
+  
+  /* Liver Icon Animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* SECTION 3 */
+  .parameters-section {
+    
+    /* background: linear-gradient(135deg, #0077b6, #00b4d8); */
+    background: linear-gradient(135deg, #03045e, #00b4d8);
+    padding: 50px 20px;
+     color: #caf0f8; 
+    /* color:whitesmoke; */
+    text-align: center;
+  }
+
+  .parameters-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Sen', sans-serif;
+  }
+
+  .parameters-section p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+  }
+
+  .parameters-grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .parameter-card {
+
+    background:rgb(134, 172, 186);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .parameter-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .animated-placeholder {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background-color: #caf0f8;
+    border-radius: 50%;
+    animation: float 3s infinite ease-in-out;
+  }
+
+  .age-placeholder {
+    background: #03045e;
+    background-image: url("{% static 'pics/generation.png' %}");
+    background-size:cover;
+  }
+
+  .gender-placeholder {
+    background: #0077b6;
+    background-image: url("{% static 'pics/gender-identity.png' %}");
+    background-size:cover;
+  }
+
+  .tooltip {
+    display: none;
+    background: #03045e;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  .parameter-card:hover .tooltip {
+    display: block;
+  }
+
+  .cta-button {
+    margin-top: 30px;
+    background-color: #0077b6;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+
+  .cta-button:hover {
+    background-color: #00b4d8;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .parameters-grid {
+      display: flex;
+      overflow-x: scroll;
+      gap: 20px;
+    }
+
+    .parameter-card {
+      flex: 0 0 80%;
+      margin-right: 20px;
+    }
+  }
+
+  /* Footer Styles */
+footer {
+    background-color: #00b4d8; /* Contrasting color */
+    color: #ffffff;
+    padding: 20px 10px;
+  }
+  
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-logo {
+    width: 120px;
+    height:120px;
+    border-radius:50%;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin: 5px 0;
+  }
+  
+  .footer-section ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #caf0f8; /* Highlight color */
+  }
+  
+   .footer-section .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .footer-section .social-links li a {
+    font-size: 16px;
+  } 
+   
+  
+  
+  .register-now {
+    display: inline-block;
+    background-color: #0077b6;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .register-now:hover {
+    background-color: #005f89;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-container {
+      grid-template-columns: 1fr;
+    }
+  }
+ 
+  /* General Styling */
+ body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+} 
+
+
+
+
+
+/* Content Section */
+.content-section {
+  padding: 40px;
+  background-color: #f9f9f9;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+  color: #0077b6;
+  margin-bottom: 15px;
+}
+
+.card p {
+  line-height: 1.6;
+}
+
+.card .btn-secondary {
+  margin-top: 10px;
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #00b4d8;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.card .btn-secondary:hover {
+  background-color: #0077b6;
+}
+
+/* LIVER-TRANSPLANT */
+/* Button Styling: Back Button */
+.btn-back {
+  border-color:#caf0f8;
+  display: inline-block;
+  background-color: #00b4d8; /* Consistent button color */
+  color: #ffffff; /* White text */
+  padding: 12px 25px; /* Padding for button */
+  text-decoration: none; /* No underline */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1rem; /* Text size */
+  font-weight: 600; /* Bold text */
+  text-align: center; /* Center the text */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-back:hover {
+  background-color: #0077b6; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.back-navigation {
+  text-align: center;
+  margin: 30px 0; /* Space around the button */
+}
+
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #03045e;
+  background-color: #f5f5f5;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #03045e, #00b4d8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 5%;
+  color: #caf0f8;
+}
+
+.text-container {
+  max-width: 50%;
+}
+
+.text-container h1 {
+  font-size: 3.5rem;
+  font-family: 'Sen', sans-serif;
+  margin-bottom: 20px;
+}
+
+.text-container p {
+  font-size: 1.25rem;
+  line-height: 2;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background-color: #0077b6;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #00b4d8;
+}
+
+.animation-container {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-illustration {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Cards Section */
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.btn-link {
+  text-decoration: none;
+  color: #00b4d8;
+  font-weight: bold;
+}
+
+.btn-link:hover {
+  color: #0077b6;
+}
+
+
+

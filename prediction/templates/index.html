@@ -1,0 +1,252 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deepconnect - Liver Cirrhosis Prediction</title>
+<!--  <link rel="stylesheet" href="{% static 'style.css' %}">-->
+  <link rel="stylesheet" href=" {% static 'style.css' %}" >
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+<!--  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>-->
+
+</head>
+<body>
+
+  <!-- navbar -->
+  <header>
+    <div class="header-container">
+      <div class="logo-section">
+        <img src="{% static 'pics/logo.jpg' %}" alt="Deepconnect Logo" class="logo">
+        <p class="tagline">Raising Awareness, Transforming Lives</p>
+      </div>
+      <div class="header-right">
+        
+        
+         <!-- <button class="donate-btn" onclick="openSignupForm()">Donate Now</button> 
+         <a href="signup' %}" class="donate-btn">Donate Now</a>  -->
+        <a href="{% url 'home' %}" class="donate-btn" style="background-color: #00b4d8; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Home</a>
+        <a href="{% url 'signup' %}" class="donate-btn" target="_blank" style="background-color: #00b4d8; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Sign In</a>
+        <div class="accessibility">
+        <a href="{% url 'hospital' %}" class="hospital_links" target="_blank" style="text-decoration: none;" ><i class="fa-regular fa-hospital"></i></a>
+        </div>
+        <div class="contact-info">
+          <i class="fa-solid fa-envelope "></i> 
+        </div>
+        
+      </div>
+    </div>
+  </header>
+  
+<!-- Section 2: Navigation Bar -->
+<div id="cont" class="nav-container">
+  <nav>
+    <ul class="menu">
+      <!-- Dropdown: Information & Support -->
+      <li class="dropdown">
+        <a href="{% url 'information_support' %}" class="menu-link" target="_blank">Information & Support</a>
+        <ul class="dropdown_menu dropdown_menu-6">
+          <li><a href="{% url 'liver_health' %}"  class="dropdown-link" >Liver health</a></li>
+          <li><a href="{% url 'liver_conditions' %}" class="dropdown-link">Liver conditions</a></li>
+          <li><a href="{% url 'liver_transplant' %}" class="dropdown-link" >Liver transplant</a></li>
+          <li><a href="{% url 'liver_cancer' %}" class="dropdown-link" >Liver cancer</a></li>
+          <li><a href="{% url 'liver_living' %}" class="dropdown-link" >Living with a liver condition</a></li>
+          <li><a href="{% url 'liver_love' %}" class="dropdown-link" >Love Your Liver</a></li>
+          <li><a href="{% url 'liver_events' %}" class="dropdown-link" >Events</a></li>
+          <li><a href="{% url 'liver_publications' %}" class="dropdown-link">Publications</a></li>
+          <li><a href="{% url 'liver_care' %}" class="dropdown-link" >Diagnosis and care</a></li>
+          <li><a href="{% url 'liver_support' %}" class="dropdown-link">Support for you</a></li>
+        </ul>
+      </li>
+      <!-- Dropdown: How You Can Help -->
+      <li class="dropdown">
+        <a href="{% url 'how_you_can_help'%}" class="menu-link" target="_blank">How You Can Help</a>
+        <ul class="dropdown_menu dropdown_menu-6">
+          <li><a href="{% url 'donate' %}" class="dropdown-link" >Donate</a></li>
+          <li><a href="{% url 'fundraise' %}" class="dropdown-link" >Fundraise</a></li>
+          <li><a href="{% url 'leave_gift' %}" class="dropdown-link" >Leave a gift in your will</a></li>
+          <li><a href="{% url 'corporate' %}" class="dropdown-link">Corporate Partnerships</a></li>
+          <li><a href="{% url 'raise_awareness' %}" class="dropdown-link">Raise Awareness </a></li>
+          <li><a href="{% url 'volunteering' %}" class="dropdown-link" >Volunteering</a></li>
+          <li><a href="{% url 'Healthcare' %}" class="dropdown-link">Healthcare Professionals</a></li>
+          <li><a href="{% url 'other_ways' %}" class="dropdown-link">Other ways to help</a></li>
+          
+        </ul>
+      </li>
+      <!-- Dropdown: Healthcare Professionals -->
+      <li class="dropdown">
+        <a href="{% url 'healthcare_professionals' %}" class="menu-link" target="_blank">Healthcare Professionals</a>
+        <ul class="dropdown_menu dropdown_menu-6">
+        <li><a href="{% url 'resources_share' %}" class="dropdown-link">Resources to share with your patients</a></li>
+        <li><a href="{% url 'resources_care' %}" class="dropdown-link">Resources for those working in primary care</a></li>
+        <li><a href="{% url 'helpus_healthcare' %}" class="dropdown-link">How you can help us as a healthcare professional</a></li>
+        <li><a href="{% url 'liver_disease_healthcare' %}" class="dropdown-link">Liver disease – example of good practice in primary care</a></li>
+        <li><a href="{% url 'research_healthcare' %}" class="dropdown-link">Research and clinical trials</a></li>
+          
+        </ul>
+      </li>
+      
+      <!-- Dropdown: About Us -->
+      <li class="dropdown">
+        <a href="{% url 'about_us' %}" class="menu-link" target="_blank">About Us</a>
+        <ul class="dropdown_menu dropdown_menu-6">
+          <li><a href="{% url 'our_strategy' %}" class="dropdown-link" >Our Strategy</a></li>
+          <li><a href="{% url 'who_we_are' %}" class="dropdown-link" > Who we are </a></li>
+          <li><a href="{% url 'what_wedo' %}" class="dropdown-link"  > What we do</a></li>
+          <li><a href="{% url 'media_centre' %}" class="dropdown-link"  > Media Centre</a></li> 
+        </ul>
+      </li>
+      <!-- Dropdown: Latest News & Blog -->
+      <li class="dropdown">
+        <a href="{% url 'latest' %}" class="menu-link" target="_blank">Latest News & Blog</a>
+        <ul class="dropdown_menu dropdown_menu-6">
+          <li><a href="{% url 'parliamentary' %}" class="dropdown-link">Parliamentary liver health awareness day</a></li>
+          <li><a href="{% url 'love_liver_month' %}" class="dropdown-link">Love Your Liver Month – How a healthy weight and diet can improve your liver health</a></li>
+          <li><a href="{% url 'staying_warm' %}" class="dropdown-link">Staying warm and healthy in the winter months if you have a liver condition</a></li>
+          <li><a href="{% url 'liver_disease_spotlight' %}" class="dropdown-link">Liver disease in the spotlight: Worried about your liver health?</a></li>
+         
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<!-- hero section -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="text-container">
+      <h1>Empowering Liver Health</h1>
+      <p>Explore advanced liver health solutions with precision and care. Your health, our priority.</p>
+      <!-- <a href="#" class="cta-button">Learn More</a> -->
+    </div>
+    <div class="animation-container">
+      <canvas id="particles-js"></canvas>
+      <img src="{% static 'pics/liver.png' %}" alt="Liver Icon" class="liver-icon">
+    </div>
+  </div>
+</section>
+<section class="parameters-section">
+  <div class="parameters-content" >
+    <h2 style="color:#caf0f8">Liver Health Parameters</h2>
+    <p style="color:#caf0f8">Discover key indicators that help predict and monitor liver cirrhosis. Explore detailed insights into each parameter below.</p>
+
+    <!-- Cards Container -->
+    <div class="parameters-grid">
+
+      <!-- Card 1: Age -->
+      <div class="parameter-card">
+        <div class="animated-placeholder age-placeholder"></div>
+        <h3>Age</h3>
+        <p>Age plays a significant role in understanding liver health. It's an important indicator for cirrhosis risk and progression.</p>
+        <!-- Tooltip (Optional, Comment to Remove) -->
+        <div class="tooltip">The risk of liver issues often increases with age.</div>
+      </div>
+
+      <!-- Card 2: Gender -->
+      <div class="parameter-card">
+        <div class="animated-placeholder gender-placeholder"></div>
+        <h3>Gender</h3>
+        <p>Gender differences can influence liver conditions. Studies suggest variations in liver cirrhosis risk between males and females.</p>
+        <div class="tooltip">Hormonal differences may impact liver health.</div>
+      </div>
+
+      <!-- Card 3: Total Bilirubin -->
+      <div class="parameter-card">
+        <div class="animated-placeholder total_bilirubin-placeholder"></div>
+        <h3>Total Bilirubin</h3>
+        <p>Total bilirubin levels indicate liver function and help detect abnormalities. Elevated levels may suggest liver disease.</p>
+        <div class="tooltip">Normal levels are essential for healthy liver function.</div>
+      </div>
+
+      <!-- Card 4: Direct Bilirubin -->
+      <div class="parameter-card">
+        <div class="animated-placeholder direct_Bilirubin-placeholder"></div>
+        <h3>Direct Bilirubin</h3>
+        <p>Direct bilirubin measures the liver's ability to excrete bile. It's a critical factor in diagnosing liver cirrhosis.</p>
+        <div class="tooltip">Abnormal levels often suggest liver obstruction.</div>
+      </div>
+
+      <!-- Card 5: Alkaline Phosphatase -->
+      <div class="parameter-card">
+        <div class="animated-placeholder Alkaline_Phosphatase-placeholder"></div>
+        <h3>Alkaline Phosphatase</h3>
+        <p>This enzyme level is essential for understanding liver and bone health. Elevated levels may indicate bile duct issues.</p>
+        <div class="tooltip">Crucial for diagnosing liver conditions.</div>
+      </div>
+
+      <!-- Card 6: SGOT -->
+      <div class="parameter-card">
+        <div class="animated-placeholder sgot-placeholder"></div>
+        <h3>SGOT</h3>
+        <p>SGOT levels reflect liver cell damage and help monitor liver conditions like cirrhosis and hepatitis.</p>
+        <div class="tooltip">High SGOT levels indicate liver stress.</div>
+      </div>
+
+      <!-- Card 7: Albumin -->
+      <div class="parameter-card">
+        <div class="animated-placeholder Albumin-placeholder"></div>
+        <h3>Albumin</h3>
+        <p>Albumin is a protein made by the liver. Its levels provide insights into liver function and overall health.</p>
+        <div class="tooltip">Low albumin levels may indicate chronic liver disease.</div>
+      </div>
+
+      <!-- Card 8: Prothrombin Time -->
+      <div class="parameter-card">
+        <div class="animated-placeholder Prothrombin_Time-placeholder"></div>
+        <h3>Prothrombin Time</h3>
+        <p>Prothrombin time measures blood clotting ability. Prolonged times could indicate liver issues.</p>
+        <div class="tooltip">A key test for liver function assessment.</div>
+      </div>
+    </div>
+
+    <!-- Call-to-Action Button -->
+    <a href="{% url 'predict' %}" class="cta-button" target="_blank">Predict</a>
+    <div class="tooltip">Predict the chance of Liver Cirrhosis </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-section border">
+      <img src="{% static 'pics/logo.jpg' %}" alt="Brand Logo" class="footer-logo" />
+      <p>© 2025 DeepConnect. All rights reserved.</p>
+    </div>
+    <div class="footer-section">
+      <h3>Our Policies</h3>
+      <ul>
+        <li><a href="#cookie-policy">Cookie Policy</a></li>
+        <li><a href="#privacy-policy">Privacy Policy</a></li>
+        <li><a href="#complaints-policy">Complaints Policy</a></li>
+        <li><a href="#terms-and-conditions">Terms and Conditions</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
+      <p>Email: <a href="mailto:deepconnect@gmail.com">deepconnect@gmail.com</a></p>
+      <p>Address: 123 Main Street, Rajasthan, India</p>
+    </div>
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <ul class="social-links">
+        <li><a href="#facebook-placeholder"><i class="fab fa-facebook"></i>Facebook</a></li>
+        <li><a href="#twitter-placeholder"><i class="fab fa-twitter"></i>Twitter</a></li>
+        <li><a href="#instagram-placeholder"><i class="fab fa-instagram"></i>Instagram</a></li>
+        <li><a href="#linkedin-placeholder"><i class="fab fa-linkedin"></i>LinkedIn</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Suggestions</h3>
+      <a href="{% url 'feedback' %}" class="register-now">Feedback</a>
+    </div>
+  </div>
+</footer>
+
+<!-- javascript -->
+<script src="{% static 'script.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+age,gender,total_bilirubin,direct_bilirubin,alkaline_phosphotase,sgot,albumin,protime,cirrhosis_risk
+56,M,1.1,0.3,66,39,3.6,15,0
+45,F,0.7,0.2,76,38,4.2,12,1
+50,M,1.2,0.4,53,43,3.5,10,0

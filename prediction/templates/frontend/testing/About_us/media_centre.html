@@ -1,0 +1,318 @@
+{% load static %}
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Centre </title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+           
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background-image:  url("{% static 'pics/about_us/media_centre.jpg' %}");
+            background-size: cover;
+             background-position: center; 
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero::after {
+            content:"";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Grid Section */
+        .content-section {
+                padding: 40px;
+                background-color: #f9f9f9;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            color: #0077b6;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .card p {
+            line-height: 1.6;
+        }
+ 
+    </style>
+</head>
+
+
+<body>
+<!-- navbar -->
+<header>
+  <div class="header-container">
+    <div class="logo-section">
+      <img src="{% static 'pics/logo.jpg' %}" alt="Deepconnect Logo" class="logo">
+      <p class="tagline">Raising Awareness, Transforming Lives</p>
+    </div>
+    <div class="header-right">
+
+      <a href="{% url 'home' %}" class="donate-btn" style="background-color: #00b4d8; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Home</a>
+      <a href="{% url 'signup' %}" class="donate-btn" target="_blank" style="background-color: #00b4d8; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Sign In</a>
+      <div class="accessibility">
+      <a href="{% url 'hospital' %}" class="hospital_links" target="_blank" style="text-decoration: none;" ><i class="fa-regular fa-hospital"></i></a>
+      </div>
+      <div class="contact-info">
+        <i class="fa-solid fa-envelope "></i> 
+      </div>
+      
+    </div>
+  </div>
+</header>
+
+<!-- Section 2: Navigation Bar -->
+<div id="cont" class="nav-container">
+  <nav>
+    <ul class="menu">
+      <!-- Dropdown: Information & Support -->
+      <li class="dropdown">
+        <a href="{% url 'information_support' %}" class="menu-link" target="_blank">Information & Support</a>
+        <ul class="dropdown_menu dropdown_menu-6">
+          <li><a href="{% url 'liver_health' %}"  class="dropdown-link" >Liver health</a></li>
+          <li><a href="{% url 'liver_conditions' %}" class="dropdown-link">Liver conditions</a></li>
+          <li><a href="{% url 'liver_transplant' %}" class="dropdown-link" >Liver transplant</a></li>
+          <li><a href="{% url 'liver_cancer' %}" class="dropdown-link" >Liver cancer</a></li>
+          <li><a href="{% url 'liver_living' %}" class="dropdown-link" >Living with a liver condition</a></li>
+          <li><a href="{% url 'liver_love' %}" class="dropdown-link" >Love Your Liver</a></li>
+          <li><a href="{% url 'liver_events' %}" class="dropdown-link" >Events</a></li>
+          <li><a href="{% url 'liver_publications' %}" class="dropdown-link">Publications</a></li>
+          <li><a href="{% url 'liver_care' %}" class="dropdown-link" >Diagnosis and care</a></li>
+          <li><a href="{% url 'liver_support' %}" class="dropdown-link">Support for you</a></li>
+        </ul>
+      </li>
+      <!-- Dropdown: How You Can Help -->
+      <li class="dropdown">
+        <a href="{% url 'how_you_can_help' %}" class="menu-link" target="_blank">How You Can Help</a>
+        <ul class="dropdown_menu dropdown_menu-6">
+          <li><a href="{% url 'donate' %}" class="dropdown-link" >Donate</a></li>
+          <li><a href="{% url 'fundraise' %}" class="dropdown-link" >Fundraise</a></li>
+          <li><a href="{% url 'leave_gift' %}" class="dropdown-link" >Leave a gift in your will</a></li>
+          <li><a href="{% url 'corporate' %}" class="dropdown-link">Corporate Partnerships</a></li>
+          <li><a href="{% url 'raise_awareness' %}" class="dropdown-link">Raise Awareness </a></li>
+          <li><a href="{% url 'volunteering' %}" class="dropdown-link" >Volunteering</a></li>
+          <li><a href="{% url 'Healthcare' %}" class="dropdown-link">Healthcare Professionals</a></li>
+          <li><a href="{% url 'other_ways' %}" class="dropdown-link">Other ways to help</a></li>
+          
+        </ul>
+      </li>
+
+      <!-- Dropdown: Healthcare Professionals -->
+      <li class="dropdown">
+        <a href="{% url 'healthcare_professionals' %}" class="menu-link" target="_blank">Healthcare Professionals</a>
+        <ul class="dropdown_menu dropdown_menu-6">
+          <li><a href="{% url 'resources_share' %}" class="dropdown-link"  >Resources to share with your patients</a></li>
+          <li><a href="{% url 'resources_care' %}" class="dropdown-link"  >Resources for those working in primary care</a></li>
+          <li><a href="{% url 'helpus_healthcare' %}" class="dropdown-link">How you can help us as a healthcare professional</a></li>
+          <li><a href="{% url 'liver_disease_healthcare' %}" class="dropdown-link">Liver disease-example of good practice in primary care</a></li>
+          <li><a href="{% url 'research_healthcare' %}" class="dropdown-link">Research and clinical trials</a></li> 
+          
+        </ul>
+      </li>
+      
+      <!-- Dropdown: About Us -->
+      <li class="dropdown">
+        <a href="{% url 'about_us' %}" class="menu-link" target="_blank">About Us</a>
+        <ul class="dropdown_menu dropdown_menu-6">
+          <li><a href="{% url 'our_strategy' %}" class="dropdown-link" >Our Strategy</a></li>
+          <li><a href="{% url 'who_we_are' %}" class="dropdown-link" > Who we are </a></li>
+          <li><a href="{% url 'what_wedo' %}" class="dropdown-link"  > What we do</a></li>
+          <li><a href="{% url 'media_centre' %}" class="dropdown-link"  > Media Centre</a></li> 
+        </ul>
+      </li>
+      <!-- Dropdown: Latest News & Blog -->
+      <li class="dropdown">
+        <a href="{% url 'latest' %}" class="menu-link" target="_blank">Latest News & Blog</a>
+        <ul class="dropdown_menu dropdown_menu-6">
+          <li><a href="{% url 'parliamentary' %}" class="dropdown-link">Parliamentary liver health awareness day</a></li>
+          <li><a href="{% url 'love_liver_month' %}" class="dropdown-link">Love Your Liver Month – How a healthy weight and diet can improve your liver health</a></li>
+          <li><a href="{% url 'staying_warm' %}" class="dropdown-link">Staying warm and healthy in the winter months if you have a liver condition</a></li>
+          <li><a href="{% url 'liver_disease_spotlight' %}" class="dropdown-link">Liver disease in the spotlight: Worried about your liver health?</a></li>
+         
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Media Centre</h1>
+            <p>
+                We are facing a liver disease epidemic in the India, with mortality rates increasing by 400% in the last 40
+                years.  
+                Our lifestyles have a major impact on health and life expectancy. Discover our latest updates, resources, and research to fight liver diseases effectively.
+            </p>
+        </div>
+    </section>
+
+    <!-- Grid Section -->
+    <section  id="overview" class="content-section">
+        <div class="container">
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="image-box">
+            <img src="{% static 'pics/about_us/media_centre_1.jpg' %}" alt="Press Research">
+            </div>
+
+            <h2>Press Research</h2>
+            <p>
+                Stay informed with the latest press releases about liver health, prevention strategies, and advancements
+                in treatment options. Discover what’s making headlines.
+            </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="image-box">
+            <img src="{% static 'pics/about_us/media_centre_2.jpg' %}" alt="Media Resources">
+            </div>
+            
+            <h2>Media Resources</h2>
+            <p>
+                Access high-quality images, videos, and fact sheets curated for media use. Highlighting liver-related
+                statistics, case studies, and awareness campaigns.
+            </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="image-box">
+            <img src="{% static 'pics/about_us/media_centre_3.jpg' %}" alt="Latest News">
+            </div>
+            
+            <h2>Latest News</h2>
+            <p>
+                Discover updates on groundbreaking research, community programs, and collaborative efforts to raise
+                awareness about liver health worldwide.
+            </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+            <div class="image-box">
+            <img src="{% static 'pics/about_us/media_centre_4.jpg' %}" alt="Statistics">
+            </div>
+            
+            <h2>Statistics</h2>
+            <p>
+                Explore key liver disease statistics that underline the growing global epidemic. Understand the numbers
+                and how they drive our mission forward.
+            </p>
+        </div>
+    </section>
+
+   
+    
+ <!-- FOOTER -->
+ <footer>
+  <div class="footer-container">
+    <div class="footer-section border">
+      <img src="{% static 'pics/logo.jpg' %}" alt="Brand Logo" class="footer-logo" />
+      <p>© 2025 DeepConnect. All rights reserved.</p>
+    </div>
+    <div class="footer-section">
+      <h3>Our Policies</h3>
+      <ul>
+        <li><a href="#cookie-policy">Cookie Policy</a></li>
+        <li><a href="#privacy-policy">Privacy Policy</a></li>
+        <li><a href="#complaints-policy">Complaints Policy</a></li>
+        <li><a href="#terms-and-conditions">Terms and Conditions</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
+      <p>Email: <a href="mailto:deepconnect@gmail.com">deepconnect@gmail.com</a></p>
+      <p>Address: 123 Main Street, Rajasthan, India</p>
+    </div>
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <ul class="social-links">
+        <li><a href="#facebook-placeholder"><i class="fab fa-facebook"></i>Facebook</a></li>
+        <li><a href="#twitter-placeholder"><i class="fab fa-twitter"></i>Twitter</a></li>
+        <li><a href="#instagram-placeholder"><i class="fab fa-instagram"></i>Instagram</a></li>
+        <li><a href="#linkedin-placeholder"><i class="fab fa-linkedin"></i>LinkedIn</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Suggestions</h3>
+      <a href="{% url 'feedback' %}" class="register-now">Feedback</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="{% static 'script.js' %}"></script>
+</body>
+
+</html>

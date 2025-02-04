@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Signup</title>
+   <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #caf0f8; /* Light background */
+      color: #03045e; /* Primary text color */
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+      margin: 50px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #0077b6; /* Secondary text color */
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin: 10px 0 5px;
+      font-weight: bold;
+      color: #03045e;
+    }
+
+    input, select, textarea {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #90e0ef; /* Subtle border */
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #00b4d8; /* Accent button */
+      border: none;
+      border-radius: 5px;
+      color: #ffffff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0077b6;
+    }
+  </style> 
+</head>
+<body>
+  <div class="container">
+    <h1>Signup Form</h1>
+<!--    <form action="#" method="POST">-->
+      <form action="{% url 'signup' %}" method="POST" id="signupForm">
+    {% csrf_token %}
+
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+      <label for="age">Age</label>
+      <input type="number" id="age" name="age" placeholder="Enter your age" required>
+
+      <label for="gender">Gender</label>
+      <select id="gender" name="gender" required>
+        <option value="">Select your gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+      <label for="message">Additional Information</label>
+      <textarea id="message" name="message" rows="4" placeholder="Enter any additional details"></textarea>
+
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+
+<script>
+    document.getElementById("signupForm").addEventListener("submit", function(event) {
+        event.preventDefault();  // Prevent default page reload
+
+        let formData = new FormData(this);
+
+        fetch("{% url 'signup' %}", {  // Ensure correct URL name
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert(data.message);  // ✅ Show "Thank You" prompt
+                document.getElementById("signupForm").reset();  // Clear form
+            } else {
+                alert("Signup failed. Please try again.");
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    });
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,226 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research and Clinical Trials</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<!-- navbar -->
+<header>
+  <div class="header-container">
+    <div class="logo-section">
+      <img src="{% static 'pics/logo.jpg' %}" alt="Deepconnect Logo" class="logo">
+      <p class="tagline">Raising Awareness, Transforming Lives</p>
+    </div>
+    <div class="header-right">
+      
+      
+       <!-- <button class="donate-btn" onclick="openSignupForm()">Donate Now</button> 
+       <a href="signup' %}" class="donate-btn">Donate Now</a>  -->
+      <a href="{% url 'home' %}" class="donate-btn" style="background-color: #00b4d8; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Home</a>
+      <a href="{% url 'signup' %}" class="donate-btn" target="_blank" style="background-color: #00b4d8; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Sign In</a>
+      <div class="accessibility">
+      <a href="{% url 'hospital' %}" class="hospital_links" target="_blank" style="text-decoration: none;" ><i class="fa-regular fa-hospital"></i></a>
+      </div>
+      <div class="contact-info">
+        <i class="fa-solid fa-envelope "></i> 
+      </div>
+      
+    </div>
+  </div>
+</header>
+
+<!-- Section 2: Navigation Bar -->
+<div id="cont" class="nav-container">
+  <nav>
+    <ul class="menu">
+      <!-- Dropdown: Information & Support -->
+      <li class="dropdown">
+        <a href="{% url 'information_support' %}" class="menu-link" target="_blank">Information & Support</a>
+        <ul class="dropdown_menu dropdown_menu-6">
+          <li><a href="{% url 'liver_health' %}"  class="dropdown-link" >Liver health</a></li>
+          <li><a href="{% url 'liver_conditions' %}" class="dropdown-link">Liver conditions</a></li>
+          <li><a href="{% url 'liver_transplant' %}" class="dropdown-link" >Liver transplant</a></li>
+          <li><a href="{% url 'liver_cancer' %}" class="dropdown-link" >Liver cancer</a></li>
+          <li><a href="{% url 'liver_living' %}" class="dropdown-link" >Living with a liver condition</a></li>
+          <li><a href="{% url 'liver_love' %}" class="dropdown-link" >Love Your Liver</a></li>
+          <li><a href="{% url 'liver_events' %}" class="dropdown-link" >Events</a></li>
+          <li><a href="{% url 'liver_publications' %}" class="dropdown-link">Publications</a></li>
+          <li><a href="{% url 'liver_care' %}" class="dropdown-link" >Diagnosis and care</a></li>
+          <li><a href="{% url 'liver_support' %}" class="dropdown-link">Support for you</a></li>
+        </ul>
+      </li>
+      <!-- Dropdown: How You Can Help -->
+      <li class="dropdown">
+        <a href="{% url 'how_you_can_help'%}" class="menu-link" target="_blank">How You Can Help</a>
+        <ul class="dropdown_menu dropdown_menu-6">
+          <li><a href="{% url 'donate' %}" class="dropdown-link" >Donate</a></li>
+          <li><a href="{% url 'fundraise' %}" class="dropdown-link" >Fundraise</a></li>
+          <li><a href="{% url 'leave_gift' %}" class="dropdown-link" >Leave a gift in your will</a></li>
+          <li><a href="{% url 'corporate' %}" class="dropdown-link">Corporate Partnerships</a></li>
+          <li><a href="{% url 'raise_awareness' %}" class="dropdown-link">Raise Awareness </a></li>
+          <li><a href="{% url 'volunteering' %}" class="dropdown-link" >Volunteering</a></li>
+          <li><a href="{% url 'Healthcare' %}" class="dropdown-link">Healthcare Professionals</a></li>
+          <li><a href="{% url 'other_ways' %}" class="dropdown-link">Other ways to help</a></li>
+
+        </ul>
+      </li>
+      <!-- Dropdown: Healthcare Professionals -->
+      <li class="dropdown">
+        <a href="{% url 'healthcare_professionals' %}" class="menu-link" target="_blank">Healthcare Professionals</a>
+        <ul class="dropdown_menu dropdown_menu-6">
+        <li><a href="{% url 'resources_share' %}" class="dropdown-link">Resources to share with your patients</a></li>
+        <li><a href="{% url 'resources_care' %}" class="dropdown-link">Resources for those working in primary care</a></li>
+        <li><a href="{% url 'helpus_healthcare' %}" class="dropdown-link">How you can help us as a healthcare professional</a></li>
+        <li><a href="{% url 'liver_disease_healthcare' %}" class="dropdown-link">Liver disease – example of good practice in primary care</a></li>
+        <li><a href="{% url 'research_healthcare' %}" class="dropdown-link">Research and clinical trials</a></li>
+
+        </ul>
+      </li>
+
+      <!-- Dropdown: About Us -->
+      <li class="dropdown">
+        <a href="{% url 'about_us' %}" class="menu-link" target="_blank">About Us</a>
+        <ul class="dropdown_menu dropdown_menu-6">
+          <li><a href="{% url 'our_strategy' %}" class="dropdown-link" >Our Strategy</a></li>
+          <li><a href="{% url 'who_we_are' %}" class="dropdown-link" > Who we are </a></li>
+          <li><a href="{% url 'what_wedo' %}" class="dropdown-link"  > What we do</a></li>
+          <li><a href="{% url 'media_centre' %}" class="dropdown-link"  > Media Centre</a></li>
+        </ul>
+      </li>
+      <!-- Dropdown: Latest News & Blog -->
+      <li class="dropdown">
+        <a href="{% url 'latest' %}" class="menu-link" target="_blank">Latest News & Blog</a>
+        <ul class="dropdown_menu dropdown_menu-6">
+          <li><a href="{% url 'parliamentary' %}" class="dropdown-link">Parliamentary liver health awareness day</a></li>
+          <li><a href="{% url 'love_liver_month' %}" class="dropdown-link">Love Your Liver Month – How a healthy weight and diet can improve your liver health</a></li>
+          <li><a href="{% url 'staying_warm' %}" class="dropdown-link">Staying warm and healthy in the winter months if you have a liver condition</a></li>
+          <li><a href="{% url 'liver_disease_spotlight' %}" class="dropdown-link">Liver disease in the spotlight: Worried about your liver health?</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+   <!-- Hero Section --> 
+<section class="hero">
+    <div class="hero-content ">
+      <div class=" text-container" >
+        <h2>Research and Clinical Trials</h2> 
+        <p>Explore the latest advancements in liver health through groundbreaking research and clinical trials. Find resources to stay informed and participate in innovative studies that improve care and outcomes.
+        </p>
+
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="{% static 'pics/healthcare_professional/research.png' %}" alt="Research Illustration" style="width: 120%; border-radius: 8px; margin-right:20%;">
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section id="overview" class="content-section">
+    <div class="container">
+        
+      <!-- Advances in Liver Research -->
+      <div class="card">
+        
+        <div class="image-box">
+            <img src="{% static 'pics/healthcare_professional/research_1.jpg' %}" alt="Host an Event" style="width: 100%; border-radius: 8px;">
+        </div>
+       
+        <h2>Advances in Liver Research </h2>
+        <p>Discover how cutting-edge research is shaping the future of liver health. Learn about recent findings and their implications for treatment and prevention.</p>
+        <a href="https://www.cancer.gov/types/liver/research"  target="_blank" class="btn-secondary">Read More</a>
+      </div>
+
+      <!-- Participation in Clinical Trials-->
+      <div class="card">
+        <div class="image-box">
+            <img src="{% static 'pics/healthcare_professional/research_2.jpg' %}" alt="Host an Event" style="width: 100%; border-radius: 8px;">
+        </div>
+
+        <h2>Participation in Clinical Trials</h2>
+        <p> Find opportunities to participate in clinical trials that contribute to the development of new treatments and therapies for liver diseases.</p>
+        <a href="https://clinicaltrials.gov/"  target="_blank" class="btn-secondary">Learn More</a>
+      </div>
+
+      <!-- Collaborative Global Initiatives-->
+      <div class="card">
+        <div class="image-box">
+            <img src="{% static 'pics/healthcare_professional/research_3.jpg' %}" alt="Host an Event" style="width: 100%;  border-radius: 8px;">
+        </div>
+
+        <h2>Collaborative Global Initiatives</h2>
+        <p>Learn about global collaborations focused on liver health research and clinical trials. Discover how partnerships are advancing solutions worldwide. </p>
+        <a href="https://www.unicef.org/health/research"  target="_blank" class="btn-secondary">Explore More</a>
+      </div>
+
+      <!-- Emerging Innovations in Care -->
+      <div class="card">
+
+        <div class="image-box">
+            <img src="{% static 'pics/healthcare_professional/research_4.png' %}" alt="Host an Event" style="width: 100%; border-radius: 8px;">
+        </div>
+        
+        <h2>Emerging Innovations in Care</h2>
+        <p>Explore innovative approaches in liver care research. Understand how breakthroughs in science and technology are transforming patient outcomes.</p>
+        <a href="https://www.who.int" target="_blank" class="btn-secondary">Find Out More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back Button -->
+  <section class="back-navigation">
+    <button onclick="window.history.back();" class="btn-back">Back</button>
+  </section>
+
+ <!-- FOOTER -->
+ <footer>
+  <div class="footer-container">
+    <div class="footer-section border">
+      <img src="{% static 'pics/logo.jpg' %}" alt="Brand Logo" class="footer-logo" />
+      <p>© 2025 DeepConnect. All rights reserved.</p>
+    </div>
+    <div class="footer-section">
+      <h3>Our Policies</h3>
+      <ul>
+        <li><a href="#cookie-policy">Cookie Policy</a></li>
+        <li><a href="#privacy-policy">Privacy Policy</a></li>
+        <li><a href="#complaints-policy">Complaints Policy</a></li>
+        <li><a href="#terms-and-conditions">Terms and Conditions</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
+      <p>Email: <a href="mailto:deepconnect@gmail.com">deepconnect@gmail.com</a></p>
+      <p>Address: 123 Main Street, Rajasthan, India</p>
+    </div>
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <ul class="social-links">
+        <li><a href="#facebook-placeholder"><i class="fab fa-facebook"></i>Facebook</a></li>
+        <li><a href="#twitter-placeholder"><i class="fab fa-twitter"></i>Twitter</a></li>
+        <li><a href="#instagram-placeholder"><i class="fab fa-instagram"></i>Instagram</a></li>
+        <li><a href="#linkedin-placeholder"><i class="fab fa-linkedin"></i>LinkedIn</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Suggestions</h3>
+      <a href="{% url 'feedback' %}" class="register-now">Feedback</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="{% static 'script.js' %}"></script>
+
+</body>
+</html>

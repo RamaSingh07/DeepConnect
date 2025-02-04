@@ -1,0 +1,68 @@
+<!--{% load static %}-->
+
+<!--{% load static %}
+<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>{% block title %}Your Website{% endblock %}</title>-->
+
+<!--    &lt;!&ndash; Global CSS and JS &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="{% static 'style.css' %}">-->
+<!--    <script src="{% static 'script.js' %}" defer></script>-->
+<!--</head>-->
+<!--<body>-->
+<!--    {% block content %}-->
+<!--    &lt;!&ndash; Page-specific content will go here &ndash;&gt;-->
+<!--    {% endblock %}-->
+
+<!--    &lt;!&ndash; Common Scripts (if needed) &ndash;&gt;-->
+<!--    <script src="{% static 'script_audio.js' %}" defer></script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block ops %}DeepSense{% endblock %}</title>
+
+    <!-- Linking Common CSS -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <!-- Icons (if any) -->
+<!--    <link rel="icon" href="{% static 'pics/icon.png' %}' %}" type="image/png">-->
+
+    {% block extra_css %} {% endblock %}  <!-- For extra CSS on specific pages -->
+</head>
+<body>
+
+    <!-- Header, Navigation, and other Common Elements -->
+    <header>
+        <img src="{% static 'pics/logo.png' %}" alt="Logo">
+        <!-- other header content -->
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        {% block cont %} {% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <img src="{% static 'pics/logo.png' %}" alt="Footer Image">
+        <!-- other footer content -->
+    </footer>
+
+    <!-- Common JS file -->
+    <script src="{% static 'script.js' %}"></script>
+    <script src="{% static 'script_audio.js' %}" defer></script>
+
+    {% block extra_js %} {% endblock %}  <!-- For extra JS on specific pages -->
+</body>
+</html>

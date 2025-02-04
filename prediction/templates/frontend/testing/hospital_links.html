@@ -1,0 +1,258 @@
+{% load static %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deepconnect - Liver Cirrhosis Prediction</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <style>
+  .hero {
+    position: relative;
+    background-image: url("{% static 'pics/hospitals/doctors.jpg' %}");
+    background-size: cover;
+     background-position: center; 
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero::after {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+</style>
+
+</head>
+<body>
+
+  <!-- navbar -->
+  <header>
+    <div class="header-container">
+      <div class="logo-section">
+        <img src="{% static 'pics/logo.jpg' %}" alt="Deepconnect Logo" class="logo">
+        <p class="tagline">Raising Awareness, Transforming Lives</p>
+      </div>
+      <div class="header-right">
+        
+        
+         <!-- <button class="donate-btn" onclick="openSignupForm()">Donate Now</button> 
+         <a href="signup.html" class="donate-btn">Donate Now</a>  -->
+        <a href="{% url 'home' %}" class="donate-btn" style="background-color: #00b4d8; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Home</a>
+        <a href="/prediction/templates/frontend/testing/signup.html" class="donate-btn" target="_blank" style="background-color: #00b4d8; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Sign In</a>
+        <div class="accessibility">
+        <a href="#" class="hospital_links" target="_blank" style="text-decoration: none;" ><i class="fa-regular fa-hospital"></i></a>
+        </div>
+        <div class="contact-info">
+          <i class="fa-solid fa-envelope "></i> 
+        </div>
+        
+      </div>
+    </div>
+  </header>
+  
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Find India's Best Hospitals for Liver Conditions</h1>
+        <p>
+            India has many top hospitals for liver disease, including hospitals that specialize in liver transplants and hospitals that offer comprehensive liver care. 
+        </p>
+    </div>
+</section>
+
+<!-- Content Section -->
+<section id="overview" class="content-section">
+    <div class="container">
+        
+      <!--Apollo Hospitals -->
+      <div class="card">
+        
+        <div class="image-box">
+            <img src="{% static 'pics/hospitals/apollo.png' %}" alt="Host an Event" style="width: 100%; border-radius: 8px;">
+        </div>
+       
+        <a href="https://www.apollohospitals.com/" target="_blank"style="text-decoration: none;"><h2>Apollo Hospitals</h2></a>
+        <p>A global leader in liver transplants with a 90% success rate. They offer advanced surgical methods and have a dedicated Hepatobiliary Critical Care Unit.
+            They are unique and state of the art facilities spread across several of the Apollo hospital locations and each Centre of Excellence stands out as a citadel of world class clinical outcomes.
+ </p>
+        
+      </div>
+
+      <!-- Kokilaben Dhirubhai Ambani Hospital-->
+      <div class="card">
+        <div class="image-box">
+            <img src="{% static 'pics/hospitals/kokilaben.png' %}" alt="Host an Event" style="width: 100%; border-radius: 8px;">
+        </div>
+
+        <a href="https://www.kokilabenhospital.com/" target="_blank"style="text-decoration: none;"><h2>Kokilaben Dhirubhai Ambani Hospital</h2></a>
+        <p> A hospital in Mumbai that's known for its success in liver transplants. 
+            Kokilaben Dhirubhai Ambani Hospital, is ranked amongst the top hospitals in India and has been awarded the number 1 hospital in Western India </p>
+         
+      </div>
+
+      <!-- Sir Ganga Ram Hospital -->
+      <div class="card">
+        <div class="image-box">
+            <img src="{% static 'pics/hospitals/sir_ganga.png' %}" alt="Host an Event" style="width: 100%;  border-radius: 8px;">
+        </div>
+
+        <a href="https://sgrh.com/" target="_blank"style="text-decoration: none;"><h2>Sir Ganga Ram Hospital</h2></a>
+        <p>A hospital in New Delhi that offers both living-donor and cadaveric transplants.The Sir Ganga Ram Hospital also provides training to young doctors under the Diplomate in National Board (DNB) program. </p>
+        </div>
+
+      <!-- Artemis Hospital-->
+      <div class="card">
+
+        <div class="image-box">
+            <img src="{% static 'pics/hospitals/artemis.png' %}" alt="Host an Event" style="width: 100%; border-radius: 8px;">
+        </div>
+        
+        <a href="https://www.artemishospitals.com/" target="_blank"style="text-decoration: none;"><h2>Artemis Hospital</h2></a>
+        <p>A super specialty hospital in Gurgaon that offers comprehensive liver care. They have advanced technologies like 64 Slice Cardiac CT Scans.Artemis Hospital is a JCI and NABH accredited hospital in Gurgaon, India. </p>
+      </div>
+
+      <!--Medanta Hospital-->
+      <div class="card">
+        
+        <div class="image-box">
+            <img src="{% static 'pics/hospitals/medanta.png' %}" alt="Host an Event" style="width: 100%; border-radius: 8px;">
+        </div>
+       
+        <a href="https://www.medanta.org/" target="_blank"style="text-decoration: none;"><h2>Medanta Hospital</h2></a>
+        <p>Global Health Limited, Medanta, is an Indian for-profit private hospital network based in Gurgaon. A multi-specialty hospital  that has performed more than 600 liver transplants.</p>
+        
+      </div>
+
+      <!-- Breach Candy Hospital-->
+      <div class="card">
+        <div class="image-box">
+            <img src="{% static 'pics/hospitals/breach.png' %}" alt="Host an Event" style="width: 100%; border-radius: 8px;">
+        </div>
+
+        <a href="https://www.breachcandyhospital.org/" target="_blank"style="text-decoration: none;"><h2>Breach Candy Hospital</h2></a>
+        <p> A hospital in Mumbai that offers personalized treatment plans and has a high success rate in liver transplants. It is a well-known and respected hospital  that offers a wide range of medical services in various specialities.</p>
+         
+      </div>
+
+      <!-- Dr. Rela's Institute & Medical Centre -->
+      <div class="card">
+        <div class="image-box">
+            <img src="{% static 'pics/hospitals/rela.png' %}" alt="Host an Event" style="width: 100%;  border-radius: 8px;">
+        </div>
+
+        <a href="https://www.relainstitute.com/" target="_blank"style="text-decoration: none;"><h2>Dr. Rela's Institute & Medical Centre</h2></a>
+        <p>Rela Hospital is a leading private multispecialty hospital located in Chromepet, Chennai, known for delivering world-class healthcare with a patient-centric approach.</p>
+         
+      </div>
+
+      <!-- Institute of Liver & Biliary Sciences-->
+      <div class="card">
+
+        <div class="image-box">
+            <img src="{% static 'pics/hospitals/ilbs.png' %}" alt="Host an Event" style="width: 100%; border-radius: 8px;">
+        </div>
+       
+        <a href="https://www.ilbs.in/" target="_blank"style="text-decoration: none;"><h2>Institute of Liver & Biliary Sciences</h2></a>
+        <p>The first of its kind to offer exclusive and complete liver and biliary treatment.
+            It was created by the Government of Delhi to make it a dedicated international center of excellence for the diagnosis and management of liver 
+        </p>
+         
+      </div>
+    </div>
+  </section>
+
+
+
+<!-- javascript -->
+<script src=></script>
+
+<script>
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 80, density: { enable: true, value_area: 800 } },
+      color: { value: "#caf0f8" },
+      shape: { type: "circle" },
+      opacity: { value: 0.5 },
+      size: { value: 5 },
+      line_linked: { enable: true, distance: 150, color: "#90e0ef", opacity: 0.4, width: 1 },
+      move: { enable: true, speed: 2, direction: "none", random: false, straight: false, out_mode: "bounce" },
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" } },
+      modes: { grab: { distance: 200, line_linked: { opacity: 1} }, push: { particles_nb: 4 } },
+    },
+    retina_detect: true,
+  });
+</script>
+ <!-- FOOTER -->
+ <footer>
+  <div class="footer-container">
+    <div class="footer-section border">
+      <img src="{% static 'pics/logo.jpg' %}" alt="Brand Logo" class="footer-logo" />
+      <p>© 2025 DeepConnect. All rights reserved.</p>
+    </div>
+    <div class="footer-section">
+      <h3>Our Policies</h3>
+      <ul>
+        <li><a href="#cookie-policy">Cookie Policy</a></li>
+        <li><a href="#privacy-policy">Privacy Policy</a></li>
+        <li><a href="#complaints-policy">Complaints Policy</a></li>
+        <li><a href="#terms-and-conditions">Terms and Conditions</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
+      <p>Email: <a href="mailto:deepconnect@gmail.com">deepconnect@gmail.com</a></p>
+      <p>Address: 123 Main Street, Rajasthan, India</p>
+    </div>
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <ul class="social-links">
+        <li><a href="#facebook-placeholder"><i class="fab fa-facebook"></i>Facebook</a></li>
+        <li><a href="#twitter-placeholder"><i class="fab fa-twitter"></i>Twitter</a></li>
+        <li><a href="#instagram-placeholder"><i class="fab fa-instagram"></i>Instagram</a></li>
+        <li><a href="#linkedin-placeholder"><i class="fab fa-linkedin"></i>LinkedIn</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Suggestions</h3>
+      <a href="/prediction/templates/frontend/testing/feedback.html" class="register-now">Feedback</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="{% static 'script.js' %}"></script>
+
+
+</body>
+</html>
+
